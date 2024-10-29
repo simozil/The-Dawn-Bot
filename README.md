@@ -30,9 +30,9 @@
 2. Create and activate a virtual environment:
    ```bash
    python -m venv venv
-   cd venv/Scripts
-   activate
-   cd ../..
+   cd venv
+   source venv/bin/activate
+   cd ..
    ```
 3. Install dependencies:
    ```bash
