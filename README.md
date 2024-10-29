@@ -101,7 +101,9 @@ http://user:pass:ip:port
    ```bash
    python run.py
    ```
-
+```bash
+   python3 run.py
+   ```
 ---
 
 ## ⚠️ Important Notes
