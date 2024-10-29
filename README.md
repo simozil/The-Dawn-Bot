@@ -1,18 +1,5 @@
 # Dawn Extension Bot [1.5]
 
-<div align="center">
-  <img src="./console/images/console.png" alt="Dawn Extension Bot Console" width="600"/>
-</div>
-
-
-**Channel: [https://t.me/JamBitPY](https://t.me/JamBitPY)**
-
-**Chat: [https://t.me/JamBitChat](https://t.me/JamBitChat)**
-
-**Donation EVM Address: 0xe23380ae575D990BebB3b81DB2F90Ce7eDbB6dDa**
-
----
-
 ## 🚀 Features
 
 - ✅ Automatic account registration and login
