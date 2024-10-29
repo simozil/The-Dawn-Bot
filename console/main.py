@@ -32,47 +32,6 @@ class Console:
         "Complete tasks": "complete_tasks",
     }
 
-    def __init__(self):
-        self.rich_console = RichConsole()
-
-    def show_dev_info(self):
-        os.system("cls" if os.name == "nt" else "clear")
-
-        title = text2art("JamBit", font="small")
-        styled_title = Text(title, style="bold cyan")
-
-        version = Text("VERSION: 1.5", style="blue")
-        telegram = Text("Channel: https://t.me/JamBitPY", style="green")
-        github = Text("GitHub: https://github.com/Jaammerr", style="green")
-
-        dev_panel = Panel(
-            Text.assemble(styled_title, "\n", version, "\n", telegram, "\n", github),
-            border_style="yellow",
-            expand=False,
-            title="[bold green]Welcome[/bold green]",
-            subtitle="[italic]Powered by Jammer[/italic]",
-        )
-
-        self.rich_console.print(dev_panel)
-        print()
-
-    @staticmethod
-    def prompt(data: list):
-        answers = inquirer.prompt(data, theme=GreenPassion())
-        return answers
-
-    def get_module(self):
-        questions = [
-            inquirer.List(
-                "module",
-                message=Fore.LIGHTBLACK_EX + "Select the module",
-                choices=self.MODULES,
-            ),
-        ]
-
-        answers = self.prompt(questions)
-        return answers.get("module")
-
     def display_info(self):
         table = Table(title="Dawn Configuration", box=box.ROUNDED)
         table.add_column("Parameter", style="cyan")
@@ -93,10 +52,26 @@ class Console:
             title="[bold yellow]System Information[/bold yellow]",
             subtitle="[italic]Use arrow keys to navigate[/italic]",
         )
-        self.rich_console.print(panel)
+        print(panel)  # Ganti self.rich_console.print dengan print
+
+    @staticmethod
+    def prompt(data: list):
+        answers = inquirer.prompt(data, theme=GreenPassion())
+        return answers
+
+    def get_module(self):
+        questions = [
+            inquirer.List(
+                "module",
+                message=Fore.LIGHTBLACK_EX + "Select the module",
+                choices=self.MODULES,
+            ),
+        ]
+
+        answers = self.prompt(questions)
+        return answers.get("module")
 
     def build(self) -> None:
-        self.show_dev_info()
         self.display_info()
 
         module = self.get_module()
